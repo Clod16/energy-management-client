@@ -41,10 +41,12 @@ final public class EnergyManagementLedgerClient extends HLFLedgerClient implemen
             throw new JLedgerClientException(e);
         }
     }
+
     @Override
     public String doRegisterEvent(String eventName, ChaincodeEventListener chaincodeEventListener) throws JLedgerClientException {
         return super.doRegisterEvent(eventName, chaincodeEventListener);
     }
+
     @Override
     public Data getData(String key) throws JLedgerClientException {
         if (key.isEmpty()) {
@@ -57,7 +59,8 @@ final public class EnergyManagementLedgerClient extends HLFLedgerClient implemen
         Data data = new Data();
         data.setPayload(payloads.get(0));
         data.setKey(key);
-        return data;    }
+        return data;
+    }
 
     @Override
     public void putData(Data data) throws JLedgerClientException {
